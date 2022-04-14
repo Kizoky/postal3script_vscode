@@ -1,9 +1,7 @@
 <p align="center"><img width="100" height="100" src="./icons/Postal3.png"></p>
 <h1 align="center">Postal3Script Syntax Highlighter</h1>
 
-A syntax highlighter for Postal 3's scripting language (vscode)
-
----
+<p align="center">A syntax highlighter for Postal 3's scripting language (vscode)</p>
 
 ## Features
 - Syntax highlighting for Postal3Script (Postal 3's scripting language)
