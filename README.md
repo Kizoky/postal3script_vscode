@@ -1,9 +1,30 @@
-# Postal3Script Syntax Highlighter (Visual Studio Code)
-A syntax highlighter for Postal 3's scripting language
+<p align="center"><img width="100" height="100" src="./icons/Postal3.png"></p>
+<h1 align="center">Postal3Script Syntax Highlighter</h1>
 
-# Installation
-Unpack the zip and create a new folder for it in <b>'C:/Users/[yourusername]/.vscode/extensions'</b>
+A syntax highlighter for Postal 3's scripting language (vscode)
 
-Ideally it should look like this: <b>'C:/Users/[yourusername]/.vscode/extensions/postal3script.vscode'</b>
+---
 
-Restart vscode when it's done, and it should automatically detect .p3s files
+## Features
+- Syntax highlighting for Postal3Script (Postal 3's scripting language)
+
+---
+
+## Images
+
+![syntaxhighlight](https://whackjobint.github.io/postal3script/images/vscode.png)
+
+![syntaxhighlight2](https://whackjobint.github.io/postal3script/images/vscode2.png)
+
+---
+
+## How To Use
+
+-   [Visual Studio Code](https://code.visualstudio.com/Download)
+
+---
+
+## Special Thanks To
+
+-	WhackJob Interactive
+-	The Postal 3 Community
