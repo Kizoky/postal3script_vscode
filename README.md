@@ -3,9 +3,6 @@
 
 <p align="center">A syntax highlighter for Postal 3's scripting language (vscode)</p>
 
-## Features
-- Syntax highlighting for Postal3Script (Postal 3's scripting language)
-
 ---
 
 ## Images
