@@ -1,0 +1,118 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Postal3Script",
+	"patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#blocks"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#punctuation"
+        },
+        {
+            "include": "#directives"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#variable"
+        },
+        {
+            "include": "#states"
+        }
+	],
+	"repository": {
+		"comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.postal3script",
+                    "begin": "\\/\\/",
+                    "end": "$",
+                    "contentName": "comment.line.double-slash.text.postal3script"
+                },
+                {
+                    "name": "comment.block.postal3script",
+                    "begin": "\\/\\*",
+                    "end": "\\*\\/",
+                    "contentName": "comment.block.text.postal3script"
+                }
+            ]
+        },
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.postal3script",
+				"match": "\\b(?i:state|pattern|executepattern|return|wait|repeat|waitforend)\\b"
+			},
+			{
+				"name": "keyword.operator.postal3script",
+				"match": "(?:-[-=]?|!=?|\\+[+=]?|~(?:==)?|\\*[*=]?|\\/=?|%=?|<(?:<|>?=)?|>(?:>(?:>|=)?|=)?|\\.\\.?|==?|&[&=]?|\\|[|=]?|\\^=?|::?)|\\b(?:AND)\\b"
+			},
+			{
+				"name": "string.quoted.double.postal3script",
+				"match": "(\\s(?:AND|==|>=|<=|>|<|/)\\s)|(\\b(?i:IfAttr|Block|Begin|End|SetAttr|ChangeAttr|RemoveAttr|CheckAttr)\\b)"
+			}
+		]
+		},
+        "types": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.postal3script",
+                    "match": "\\b\\d+?\\b"
+                },
+                {
+                    "name": "storage.type.postal3script",
+                    "match": "\\b(?i:constants|events|states|patterns|actions|ignore_ext_events|behavior|inherited|name|Group|movement_activities_packs|activities|sounds|factions|state_matrices|vision_modes|manners|social_matrix|item_types|item_matrix)\\b"
+                },
+                {
+                    "name": "constant.language.boolean.postal3script",
+                    "match": "\\b(?i:true|false)\\b"
+                }
+            ]
+        },
+		"states": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.postal3script",
+                    "match": "\\bst_[a-z-A-z]+"
+                },
+                {
+                    "name": "entity.name.type.module.postal3script",
+                    "match": "\\bpt_[a-z-A-z]+"
+                },
+                {
+                    "name": "constant.numeric.postal3script",
+                    "match": "\\bxpt_[a-z-A-z]+"
+                }
+            ]
+        },
+		"functions": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.postal3script",
+                    "match": "\\b(?i:Effect|FireEvent|FireEventEX|FireUser|OnUser|FireInput|AreaEvent|EntFireUser|EntFireInput|Item|SpawnItem|AddFluid|Anchor|TargetAnchor|Say|EmitSound|Gesture|ResetGesture|ResetSequence|Headblob|NPC|Aim|Face|Snatch|Unsnatch|Senses|LookAt|LookOut|Crouch|Lean|Busy|Hate|Follow|PlayerFriendly|CatDervish|StunOut|EnableGibs|EnterVehicle|SetSquad|SetSquadRelation|RemoveSquadRelation|RallySquad|TargetEntByName|SendTarget2Caller|SendCaller|CheckTarget|CheckLOS|ResetTarget|IgnoreTarget|SetTarget|TargetEnemy|TargetPlayer|TargetCaller|TargetItem|TargetVehicle|TargetHostage|TargetCrosshair|TargetToMem|TargetFromMem|CallerToMem|ClearMem|AssistTarget|AssistEnemy|ArrestTarget|BusyTarget|Relationship|Move|MoveToLean|MoveToTarget|MovetoTargetLKP|FreeMovement|FreeMovementParams|TarvelByPathTrack|SetHintGroup|SetAreaGroup|SetLeanGroup|AvoidProhibitedArea|Turn|TurnSpeed|SetActPack|Hit|Push|Weapon|Reload|ThrowGrenade|AttributeProgressBar|MissionLog|MissionSave|MissionBriefing|ShowMessage|ShowHint|EndMission|PlayerKarma|PlayVideo|OpenDialog|Sequence|Timer|Const)\\b"
+                },
+				{
+                    "name": "entity.name.type.module.postal3script",
+                    "match": "\\b(?i:Manner:|Faction:|ItemType:|String:|Timer:|Object:|DistTo:|AngleTo:|Visible:|HasWeapon:|RelationTo:|Relation:|Ammo:|Ignore:|Karma:|VoicePrefix:|Slot#|Name:)\\b"
+                },
+				{
+                    "name": "constant.numeric.postal3script",
+                    "match": "\\b(?i:Neutral|Alert|Combat|Enemy|Fear|target|caller|player|self)\\b|\\bOnAE_[a-z-A-z]+|\\bOnTimer_[a-z-A-z]+|\\bOnAnim[a-z-A-z]+|\\bea_[a-z-A-z]+|\\bOnAttrMax_[a-z-A-z]+|\\bOnAttrMin_[a-z-A-z]+|\\bOnFire_[a-z-A-z]+|\\bOnAttrRemove_[a-z-A-z]+|\\bOnAttrChange_[a-z-A-z]+|\\bOnStartBusyNode|\\bOnFinishBusyNode|\\bOnNoActiveNode|\\bFearHide|\\bOnInvalidRoute|\\bOnTargetReset|\\bOnEnd|\\bOnUser1|\\bOnUser2|\\bOnUser3|\\bOnUser4|\\bOnPathTrackUnresolved|\\bOnPathTrackFailed|\\bOnUse|\\bOnDrop|\\bOnTake|\\bOnDialogNo|\\bOnDialogYes|\\bOnIgnite|\\bOnAcid|\\bOnFinaleWin|\\bOnLeanFailed|\\bOnKrotchyDamage|\\bOnDamaged|\\bOnHit|\\bOnExtinguish|\\bOnSuperNasty|\\bOnNasty|\\bOnPaint|\\bOnInFlame|\\bOnSeeFlame|\\bOnPlayerPush|\\bOnEnemiesDead|\\bOnNewEnemy|\\bOnNewFear|\\bOnSawEnemyEnt|\\bOnSawFearEnt|\\bOnSawNeutralEnt|\\bOnLostEnemyEnt|\\bOnLostFearEnt|\\bOnLostNeutralEnt|\\bOnTased|\\bOnTargetReach|\\bOnStandUpBegin|\\bOnStandUpEnd|\\bOnLost|\\bOnTargetClose|\\bOnVisible|\\bOnLOS|\\bOnHear|\\bOnHearCombat|\\bOnHearDanger|\\bOnDeath|\\bOnTargetKilled|\\bOnUnconscious|\\bOnTargetUnconscious|\\bOnKicked|\\bOnFallToGround|\\bOnRecover|\\bOnThreatOfVehicleHit|\\bOnSprayStunned|\\bOnTasingStart|\\bOnBatonShocked|\\bOnUnstunned|\\bOnBump|\\bOnUseCommand|\\bOnLand|\\bOnDervishBegin|\\bOnDervishEnd|\\bOnGrenadeAttached|\\bOnSnatch|\\bOnUnsnatch|\\bOnStun|\\bOnHostaged|\\bOnResque|\\bOnArrested|\\bOnTargetArrested|\\bOnThrowGrenadeFailed|\\bOnStunnedOut|\\bOnEnemySpoted|\\bOnTargetResistArrest|\\bOnFailedToEnterVehicle|\\bOnEnteredVehicle|\\bOnLeaveVehicle|\\bOnCannonShoot|\\bOnCannonDestroyed|\\bOnGatlingShoot|\\bOnGatlingDestroyed|\\bOnLauncherShoot|\\bOnLauncherLeftDestroyed|\\bOnLauncherRightDestroyed|\\bOnPrimaryAttack|\\bOnSecondaryAttack|\\bOnBeeSting|\\bOnBlind|\\bOnSucked|\\bOnTasingFinish"
+                }
+            ]
+        }
+	},
+	"scopeName": "source.postal3script"
+}

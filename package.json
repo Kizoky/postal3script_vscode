@@ -1,0 +1,25 @@
+{
+    "name": "postal3script",
+    "displayName": "Postal3Script",
+    "description": "A Syntax Highlighter for Postal 3's Script files",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.65.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "postal3script",
+            "aliases": ["Postal3Script", "postal3script"],
+            "extensions": [".p3s"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "postal3script",
+            "scopeName": "source.postal3script",
+            "path": "./syntaxes/postal3script.tmLanguage.json"
+        }]
+    }
+}
