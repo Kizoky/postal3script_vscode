@@ -1,7 +1,7 @@
 <p align="center"><img width="100" height="100" src="./icons/Postal3.png"></p>
 <h1 align="center">Postal3Script Language Support For VSCode</h1>
 
-<p align="center">Postal 3 Script language support for VSCode with syntax highlighting and code snippets</p>
+<p align="center">Postal3Script (.p3s) language support for VSCode with syntax highlighting and code snippets</p>
 
 ---
 
