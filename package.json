@@ -1,11 +1,11 @@
 {
     "name": "postal3script",
     "displayName": "Postal3Script",
-    "description": "A Syntax Highlighter for Postal 3's Script files",
-	"publisher": "Kizoky",
-	"icon": "icons/Postal3.png",
-    "version": "1.0.1",
-	    "repository": {
+    "description": "Postal 3 Script language support with syntax highlighting and code snippets",
+    "publisher": "Kizoky",
+    "icon": "icons/Postal3.png",
+    "version": "1.0.2",
+    "repository": {
         "type": "git",
         "url": "https://github.com/Kizoky/postal3script_vscode.git"
     },
@@ -16,16 +16,31 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "postal3script",
-            "aliases": ["Postal3Script", "postal3script"],
-            "extensions": [".p3s"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "postal3script",
-            "scopeName": "source.postal3script",
-            "path": "./syntaxes/postal3script.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "postal3script",
+                "aliases": [
+                    "Postal3Script",
+                    "postal3script"
+                ],
+                "extensions": [
+                    ".p3s"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "postal3script",
+                "scopeName": "source.postal3script",
+                "path": "./syntaxes/postal3script.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "postal3script",
+                "path": "./snippets/postal3script-snippets.json"
+            }
+        ]
     }
 }

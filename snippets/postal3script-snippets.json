@@ -1,0 +1,922 @@
+{
+    "HeadblobSpawn": {
+        "prefix": "HeadBlob",
+        "body": [
+            "// Headblob: Spawns an effect above an NPC's head.",
+            "Headblob ${1:headblobIndex},${2:headblobName}"
+        ],
+        "description": "Spawns an effect above an NPC's head."
+    },
+    "EffectSpawn": {
+        "prefix": "Effect",
+        "body": [
+            "// Spawns and sets up a particle effect utilizing all parameters.",
+            "Effect ${1:slotnum},${2:effectname},${3:attachmentpoint},${4:xpos},${5:ypos},${6:zpos},${7:lifetime},${8:hitchup}"
+        ],
+        "description": "Spawns and sets up a particle effect utilizing all parameters."
+    },
+    "EffectReset": {
+        "prefix": "EffectReset",
+        "body": [
+            "// Reset an existing particle effect.",
+            "Effect ${1:slotnum},reset"
+        ],
+        "description": "Reset an existing particle effect."
+    },
+    "EffectKill": {
+        "prefix": "EffectKill",
+        "body": [
+            "// Kill an existing particle effect.",
+            "Effect ${1:slotnum},kill"
+        ],
+        "description": "Kill an existing particle effect."
+    },
+    "State": {
+        "prefix": "State",
+        "body": [
+            "// Defines a state.",
+            "State ${1:statename},${2:statetype},${3:statemode}"
+        ],
+        "description": "Defines a state."
+    },
+    "Pattern": {
+        "prefix": "Pattern",
+        "body": [
+            "// Defines a pattern of states.",
+            "Pattern ${1:patternname},${2:statename1},${3:statename2},..."
+        ],
+        "description": "Defines a pattern of states."
+    },
+    "ExecutePattern": {
+        "prefix": "ExecutePattern",
+        "body": [
+            "// Executes a predefined pattern.",
+            "ExecutePattern ${1:patternname}"
+        ],
+        "description": "Executes a predefined pattern."
+    },
+    "Wait": {
+        "prefix": "Wait",
+        "body": [
+            "// Pauses for a specified time.",
+            "Wait ${1:time}"
+        ],
+        "description": "Pauses for a specified time."
+    },
+    "WaitForEnd": {
+        "prefix": "WaitForEnd",
+        "body": [
+            "// Waits for the end of a specific state.",
+            "WaitForEnd ${1:statename}"
+        ],
+        "description": "Waits for the end of a specific state."
+    },
+    "Repeat": {
+        "prefix": "Repeat",
+        "body": [
+            "// Repeats a state a specified number of times.",
+            "Repeat ${1:number},${2:statename}"
+        ],
+        "description": "Repeats a state a specified number of times."
+    },
+    "Return": {
+        "prefix": "Return",
+        "body": [
+            "// Ends the current state.",
+            "Return"
+        ],
+        "description": "Ends the current state."
+    },
+    "StateMatrix": {
+        "prefix": "StateMatrix",
+        "body": [
+            "// Defines a state matrix.",
+            "StateMatrix ${1:matrixname}"
+        ],
+        "description": "Defines a state matrix."
+    },
+    "CallState": {
+        "prefix": "CallState",
+        "body": [
+            "// Calls another state.",
+            "CallState ${1:statename}"
+        ],
+        "description": "Calls another state."
+    },
+    "CallPattern": {
+        "prefix": "CallPattern",
+        "body": [
+            "// Calls a pattern.",
+            "CallPattern ${1:patternname}"
+        ],
+        "description": "Calls a pattern."
+    },
+    "StoreActivityPattern": {
+        "prefix": "StoreActivityPattern",
+        "body": [
+            "// Stores an activity pattern.",
+            "StoreActivityPattern ${1:patternname}"
+        ],
+        "description": "Stores an activity pattern."
+    },
+    "ExecuteActivityPattern": {
+        "prefix": "ExecuteActivityPattern",
+        "body": [
+            "// Executes an activity pattern.",
+            "ExecuteActivityPattern ${1:patternname}"
+        ],
+        "description": "Executes an activity pattern."
+    },
+    "ClearActivityPattern": {
+        "prefix": "ClearActivityPattern",
+        "body": [
+            "// Clears the current activity pattern.",
+            "ClearActivityPattern"
+        ],
+        "description": "Clears the current activity pattern."
+    },
+    "SendState": {
+        "prefix": "SendState",
+        "body": [
+            "// Sends an entity to a state.",
+            "SendState ${1:entity},${2:statename}"
+        ],
+        "description": "Sends an entity to a state."
+    },
+    "SendPattern": {
+        "prefix": "SendPattern",
+        "body": [
+            "// Sends an entity to a pattern.",
+            "SendPattern ${1:entity},${2:patternname}"
+        ],
+        "description": "Sends an entity to a pattern."
+    },
+    "AreaEvent": {
+        "prefix": "AreaEvent",
+        "body": [
+            "// Fires area event.",
+            "AreaEvent ${1:eventname},${2:radius},${3:filter1},${4:filter2},${5:filter3},..."
+        ],
+        "description": "Fires area event."
+    },
+    "Effect": {
+        "prefix": "Effect",
+        "body": [
+            "// Triggers a specific effect.",
+            "Effect ${1:effectname},${2:parameters}"
+        ],
+        "description": "Triggers a specific effect."
+    },
+    "FireEvent": {
+        "prefix": "FireEvent",
+        "body": [
+            "// Fires an event at a target.",
+            "FireEvent ${1:eventname},${2:target}"
+        ],
+        "description": "Fires an event at a target."
+    },
+    "FireEventEX": {
+        "prefix": "FireEventEX",
+        "body": [
+            "// Fires an extended event.",
+            "FireEventEX ${1:eventname},${2:target},${3:extra}"
+        ],
+        "description": "Fires an extended event."
+    },
+    "FireUser": {
+        "prefix": "FireUser",
+        "body": [
+            "// Executes a user-specific action.",
+            "FireUser ${1:username},${2:action}"
+        ],
+        "description": "Executes a user-specific action."
+    },
+    "EntFireUser": {
+        "prefix": "EntFireUser",
+        "body": [
+            "// Executes a user-specific action on an entity.",
+            "EntFireUser ${1:entity},${2:username},${3:action}"
+        ],
+        "description": "Executes a user-specific action on an entity."
+    },
+    "FireInput": {
+        "prefix": "FireInput",
+        "body": [
+            "// Fires a specific input.",
+            "FireInput ${1:inputname},${2:value}"
+        ],
+        "description": "Fires a specific input."
+    },
+    "EntFireInput": {
+        "prefix": "EntFireInput",
+        "body": [
+            "// Fires a specific input on an entity.",
+            "EntFireInput ${1:entity},${2:inputname},${3:value}"
+        ],
+        "description": "Fires a specific input on an entity."
+    },
+    "OnUser": {
+        "prefix": "OnUser",
+        "body": [
+            "// Defines an action for a user.",
+            "OnUser ${1:username},${2:action}"
+        ],
+        "description": "Defines an action for a user."
+    },
+    "Item": {
+        "prefix": "Item",
+        "body": [
+            "// Spawns an item.",
+            "Item ${1:itemname},${2:parameters}"
+        ],
+        "description": "Spawns an item."
+    },
+    "SpawnItem": {
+        "prefix": "SpawnItem",
+        "body": [
+            "// Spawns an item at a location.",
+            "SpawnItem ${1:itemname},${2:location},${3:parameters}"
+        ],
+        "description": "Spawns an item at a location."
+    },
+    "AddFluid": {
+        "prefix": "AddFluid",
+        "body": [
+            "// Adds fluid to a target.",
+            "AddFluid ${1:fluidtype},${2:amount},${3:target}"
+        ],
+        "description": "Adds fluid to a target."
+    },
+    "Anchor": {
+        "prefix": "Anchor",
+        "body": [
+            "// Sets an anchor for an entity.",
+            "Anchor ${1:anchorname},${2:entity}"
+        ],
+        "description": "Sets an anchor for an entity."
+    },
+    "TargetAnchor": {
+        "prefix": "TargetAnchor",
+        "body": [
+            "// Targets an anchor.",
+            "TargetAnchor ${1:anchorname}"
+        ],
+        "description": "Targets an anchor."
+    },
+    "NPC": {
+        "prefix": "NPC",
+        "body": [
+            "// Executes an action on an NPC.",
+            "NPC ${1:npcname},${2:action}"
+        ],
+        "description": "Executes an action on an NPC."
+    },
+    "Say": {
+        "prefix": "Say",
+        "body": [
+            "// Makes an NPC say something to a target.",
+            "Say ${1:message},${2:target}"
+        ],
+        "description": "Makes an NPC say something to a target."
+    },
+    "EmitSound": {
+        "prefix": "EmitSound",
+        "body": [
+            "// Makes an NPC emit a sound.",
+            "EmitSound ${1:soundname},${2:target}"
+        ],
+        "description": "Makes an NPC emit a sound."
+    },
+    "Gesture": {
+        "prefix": "Gesture",
+        "body": [
+            "// Makes an NPC perform a gesture.",
+            "Gesture ${1:gesturename},${2:target}"
+        ],
+        "description": "Makes an NPC perform a gesture."
+    },
+    "ResetGesture": {
+        "prefix": "ResetGesture",
+        "body": [
+            "// Resets a specific gesture.",
+            "ResetGesture ${1:gesturename}"
+        ],
+        "description": "Resets a specific gesture."
+    },
+    "Sequence": {
+        "prefix": "Sequence",
+        "body": [
+            "// Executes a sequence of actions.",
+            "Sequence ${1:sequencename},${2:target}"
+        ],
+        "description": "Executes a sequence of actions."
+    },
+    "ResetSequence": {
+        "prefix": "ResetSequence",
+        "body": [
+            "// Resets a specific sequence.",
+            "ResetSequence ${1:sequencename}"
+        ],
+        "description": "Resets a specific sequence."
+    },
+    "Headblob": {
+        "prefix": "Headblob",
+        "body": [
+            "// Controls the headblob state of an NPC.",
+            "Headblob ${1:state}"
+        ],
+        "description": "Controls the headblob state of an NPC."
+    },
+    "Aim": {
+        "prefix": "Aim",
+        "body": [
+            "// Makes an NPC aim at a target.",
+            "Aim ${1:target}"
+        ],
+        "description": "Makes an NPC aim at a target."
+    },
+    "Face": {
+        "prefix": "Face",
+        "body": [
+            "// Makes an NPC face a target.",
+            "Face ${1:target}"
+        ],
+        "description": "Makes an NPC face a target."
+    },
+    "Snatch": {
+        "prefix": "Snatch",
+        "body": [
+            "// Makes an NPC snatch an item from a target.",
+            "Snatch ${1:item},${2:target}"
+        ],
+        "description": "Makes an NPC snatch an item from a target."
+    },
+    "Unsnatch": {
+        "prefix": "Unsnatch",
+        "body": [
+            "// Makes an NPC release an item.",
+            "Unsnatch ${1:item},${2:target}"
+        ],
+        "description": "Makes an NPC release an item."
+    },
+    "Senses": {
+        "prefix": "Senses",
+        "body": [
+            "// Defines NPC senses.",
+            "Senses ${1:sensenames}"
+        ],
+        "description": "Defines NPC senses."
+    },
+    "LookAt": {
+        "prefix": "LookAt",
+        "body": [
+            "// Makes an NPC look at a target.",
+            "LookAt ${1:target}"
+        ],
+        "description": "Makes an NPC look at a target."
+    },
+    "LookOut": {
+        "prefix": "LookOut",
+        "body": [
+            "// Makes an NPC look out in a direction.",
+            "LookOut ${1:direction}"
+        ],
+        "description": "Makes an NPC look out in a direction."
+    },
+    "Crouch": {
+        "prefix": "Crouch",
+        "body": [
+            "// Makes an NPC crouch.",
+            "Crouch ${1:state}"
+        ],
+        "description": "Makes an NPC crouch."
+    },
+    "Lean": {
+        "prefix": "Lean",
+        "body": [
+            "// Makes an NPC lean in a direction.",
+            "Lean ${1:direction}"
+        ],
+        "description": "Makes an NPC lean in a direction."
+    },
+    "Busy": {
+        "prefix": "Busy",
+        "body": [
+            "// Sets an NPC's busy state.",
+            "Busy ${1:state}"
+        ],
+        "description": "Sets an NPC's busy state."
+    },
+    "Hate": {
+        "prefix": "Hate",
+        "body": [
+            "// Makes an NPC hate a target.",
+            "Hate ${1:target}"
+        ],
+        "description": "Makes an NPC hate a target."
+    },
+    "Follow": {
+        "prefix": "Follow",
+        "body": [
+            "// Makes an NPC follow a target.",
+            "Follow ${1:target}"
+        ],
+        "description": "Makes an NPC follow a target."
+    },
+    "PlayerFriendly": {
+        "prefix": "PlayerFriendly",
+        "body": [
+            "// Sets an NPC's friendliness to the player.",
+            "PlayerFriendly ${1:state}"
+        ],
+        "description": "Sets an NPC's friendliness to the player."
+    },
+    "CatDervish": {
+        "prefix": "CatDervish",
+        "body": [
+            "// Activates cat dervish behavior.",
+            "CatDervish ${1:state}"
+        ],
+        "description": "Activates cat dervish behavior."
+    },
+    "StunOut": {
+        "prefix": "StunOut",
+        "body": [
+            "// Sets an NPC's stun state.",
+            "StunOut ${1:state}"
+        ],
+        "description": "Sets an NPC's stun state."
+    },
+    "EnableGibs": {
+        "prefix": "EnableGibs",
+        "body": [
+            "// Enables or disables gibs for an NPC.",
+            "EnableGibs ${1:state}"
+        ],
+        "description": "Enables or disables gibs for an NPC."
+    },
+    "EnterVehicle": {
+        "prefix": "EnterVehicle",
+        "body": [
+            "// Makes an NPC enter a vehicle.",
+            "EnterVehicle ${1:vehicle}"
+        ],
+        "description": "Makes an NPC enter a vehicle."
+    },
+    "SetSquad": {
+        "prefix": "SetSquad",
+        "body": [
+            "// Defines a squad and its members.",
+            "SetSquad ${1:squadname},${2:members}"
+        ],
+        "description": "Defines a squad and its members."
+    },
+    "SetSquadRelation": {
+        "prefix": "SetSquadRelation",
+        "body": [
+            "// Sets the relation between two squads.",
+            "SetSquadRelation ${1:squad1},${2:squad2},${3:relation}"
+        ],
+        "description": "Sets the relation between two squads."
+    },
+    "RemoveSquadRelation": {
+        "prefix": "RemoveSquadRelation",
+        "body": [
+            "// Removes the relation between two squads.",
+            "RemoveSquadRelation ${1:squad1},${2:squad2}"
+        ],
+        "description": "Removes the relation between two squads."
+    },
+    "RallySquad": {
+        "prefix": "RallySquad",
+        "body": [
+            "// Rallies a squad to a location.",
+            "RallySquad ${1:squadname},${2:location}"
+        ],
+        "description": "Rallies a squad to a location."
+    },
+    "TargetEntByName": {
+        "prefix": "TargetEntByName",
+        "body": [
+            "// Targets an entity by name.",
+            "TargetEntByName ${1:name}"
+        ],
+        "description": "Targets an entity by name."
+    },
+    "SendTarget2Caller": {
+        "prefix": "SendTarget2Caller",
+        "body": [
+            "// Sends the target to the caller.",
+            "SendTarget2Caller ${1:target}"
+        ],
+        "description": "Sends the target to the caller."
+    },
+    "SendCaller": {
+        "prefix": "SendCaller",
+        "body": [
+            "// Sends the caller to the target.",
+            "SendCaller ${1:target}"
+        ],
+        "description": "Sends the caller to the target."
+    },
+    "CheckTarget": {
+        "prefix": "CheckTarget",
+        "body": [
+            "// Checks the status of a target.",
+            "CheckTarget ${1:target}"
+        ],
+        "description": "Checks the status of a target."
+    },
+    "CheckLOS": {
+        "prefix": "CheckLOS",
+        "body": [
+            "// Checks the line of sight to a target.",
+            "CheckLOS ${1:target}"
+        ],
+        "description": "Checks the line of sight to a target."
+    },
+    "ResetTarget": {
+        "prefix": "ResetTarget",
+        "body": [
+            "// Resets the target.",
+            "ResetTarget ${1:target}"
+        ],
+        "description": "Resets the target."
+    },
+    "IgnoreTarget": {
+        "prefix": "IgnoreTarget",
+        "body": [
+            "// Ignores a specific target.",
+            "IgnoreTarget ${1:target}"
+        ],
+        "description": "Ignores a specific target."
+    },
+    "SetTarget": {
+        "prefix": "SetTarget",
+        "body": [
+            "// Sets a specific target.",
+            "SetTarget ${1:target}"
+        ],
+        "description": "Sets a specific target."
+    },
+    "TargetEnemy": {
+        "prefix": "TargetEnemy",
+        "body": [
+            "// Targets an enemy.",
+            "TargetEnemy ${1:enemy}"
+        ],
+        "description": "Targets an enemy."
+    },
+    "TargetPlayer": {
+        "prefix": "TargetPlayer",
+        "body": [
+            "// Targets a player.",
+            "TargetPlayer ${1:player}"
+        ],
+        "description": "Targets a player."
+    },
+    "TargetCaller": {
+        "prefix": "TargetCaller",
+        "body": [
+            "// Targets the caller.",
+            "TargetCaller ${1:caller}"
+        ],
+        "description": "Targets the caller."
+    },
+    "TargetItem": {
+        "prefix": "TargetItem",
+        "body": [
+            "// Targets an item.",
+            "TargetItem ${1:item}"
+        ],
+        "description": "Targets an item."
+    },
+    "TargetVehicle": {
+        "prefix": "TargetVehicle",
+        "body": [
+            "// Targets a vehicle.",
+            "TargetVehicle ${1:vehicle}"
+        ],
+        "description": "Targets a vehicle."
+    },
+    "TargetHostage": {
+        "prefix": "TargetHostage",
+        "body": [
+            "// Targets a hostage.",
+            "TargetHostage ${1:hostage}"
+        ],
+        "description": "Targets a hostage."
+    },
+    "TargetCrosshair": {
+        "prefix": "TargetCrosshair",
+        "body": [
+            "// Targets the crosshair.",
+            "TargetCrosshair ${1:crosshair}"
+        ],
+        "description": "Targets the crosshair."
+    },
+    "TargetToMem": {
+        "prefix": "TargetToMem",
+        "body": [
+            "// Targets to memory.",
+            "TargetToMem ${1:memory}"
+        ],
+        "description": "Targets to memory."
+    },
+    "TargetFromMem": {
+        "prefix": "TargetFromMem",
+        "body": [
+            "// Retrieves a target from memory.",
+            "TargetFromMem ${1:memory}"
+        ],
+        "description": "Retrieves a target from memory."
+    },
+    "CallerToMem": {
+        "prefix": "CallerToMem",
+        "body": [
+            "// Stores the caller in memory.",
+            "CallerToMem ${1:memory}"
+        ],
+        "description": "Stores the caller in memory."
+    },
+    "ClearMem": {
+        "prefix": "ClearMem",
+        "body": [
+            "// Clears the memory.",
+            "ClearMem ${1:memory}"
+        ],
+        "description": "Clears the memory."
+    },
+    "AssistTarget": {
+        "prefix": "AssistTarget",
+        "body": [
+            "// Assists the target.",
+            "AssistTarget ${1:target}"
+        ],
+        "description": "Assists the target."
+    },
+    "AssistEnemy": {
+        "prefix": "AssistEnemy",
+        "body": [
+            "// Assists the enemy.",
+            "AssistEnemy ${1:enemy}"
+        ],
+        "description": "Assists the enemy."
+    },
+    "ArrestTarget": {
+        "prefix": "ArrestTarget",
+        "body": [
+            "// Arrests the target.",
+            "ArrestTarget ${1:target}"
+        ],
+        "description": "Arrests the target."
+    },
+    "BusyTarget": {
+        "prefix": "BusyTarget",
+        "body": [
+            "// Sets the target as busy.",
+            "BusyTarget ${1:target}"
+        ],
+        "description": "Sets the target as busy."
+    },
+    "Relationship": {
+        "prefix": "Relationship",
+        "body": [
+            "// Sets the relationship status.",
+            "Relationship ${1:relation}"
+        ],
+        "description": "Sets the relationship status."
+    },
+    "Move": {
+        "prefix": "Move",
+        "body": [
+            "// Moves to a location.",
+            "Move ${1:location}"
+        ],
+        "description": "Moves to a location."
+    },
+    "MoveToLean": {
+        "prefix": "MoveToLean",
+        "body": [
+            "// Moves to a lean location.",
+            "MoveToLean ${1:location}"
+        ],
+        "description": "Moves to a lean location."
+    },
+    "MoveToTarget": {
+        "prefix": "MoveToTarget",
+        "body": [
+            "// Moves to a target.",
+            "MoveToTarget ${1:target}"
+        ],
+        "description": "Moves to a target."
+    },
+    "MoveToTargetLKP": {
+        "prefix": "MoveToTargetLKP",
+        "body": [
+            "// Moves to the last known position of a target.",
+            "MoveToTargetLKP ${1:target}"
+        ],
+        "description": "Moves to the last known position of a target."
+    },
+    "FreeMovement": {
+        "prefix": "FreeMovement",
+        "body": [
+            "// Sets free movement state.",
+            "FreeMovement ${1:state}"
+        ],
+        "description": "Sets free movement state."
+    },
+    "FreeMovementParams": {
+        "prefix": "FreeMovementParams",
+        "body": [
+            "// Sets parameters for free movement.",
+            "FreeMovementParams ${1:parameters}"
+        ],
+        "description": "Sets parameters for free movement."
+    },
+    "TravelByPathTrack": {
+        "prefix": "TravelByPathTrack",
+        "body": [
+            "// Travels by a path track.",
+            "TravelByPathTrack ${1:pathtrack}"
+        ],
+        "description": "Travels by a path track."
+    },
+    "SetHintGroup": {
+        "prefix": "SetHintGroup",
+        "body": [
+            "// Sets a hint group.",
+            "SetHintGroup ${1:group}"
+        ],
+        "description": "Sets a hint group."
+    },
+    "SetAreaGroup": {
+        "prefix": "SetAreaGroup",
+        "body": [
+            "// Sets an area group.",
+            "SetAreaGroup ${1:group}"
+        ],
+        "description": "Sets an area group."
+    },
+    "SetLeanGroup": {
+        "prefix": "SetLeanGroup",
+        "body": [
+            "// Sets a lean group.",
+            "SetLeanGroup ${1:group}"
+        ],
+        "description": "Sets a lean group."
+    },
+    "AvoidProhibitedArea": {
+        "prefix": "AvoidProhibitedArea",
+        "body": [
+            "// Avoids a prohibited area.",
+            "AvoidProhibitedArea ${1:area}"
+        ],
+        "description": "Avoids a prohibited area."
+    },
+    "Turn": {
+        "prefix": "Turn",
+        "body": [
+            "// Turns by a specific angle.",
+            "Turn ${1:angle}"
+        ],
+        "description": "Turns by a specific angle."
+    },
+    "TurnSpeed": {
+        "prefix": "TurnSpeed",
+        "body": [
+            "// Sets the turn speed.",
+            "TurnSpeed ${1:speed}"
+        ],
+        "description": "Sets the turn speed."
+    },
+    "SetActPack": {
+        "prefix": "SetActPack",
+        "body": [
+            "// Sets an action pack.",
+            "SetActPack ${1:actpack}"
+        ],
+        "description": "Sets an action pack."
+    },
+    "Hit": {
+        "prefix": "Hit",
+        "body": [
+            "// Hits a target with specified damage.",
+            "Hit ${1:target},${2:damage}"
+        ],
+        "description": "Hits a target with specified damage."
+    },
+    "Push": {
+        "prefix": "Push",
+        "body": [
+            "// Pushes a target with specified force.",
+            "Push ${1:target},${2:force}"
+        ],
+        "description": "Pushes a target with specified force."
+    },
+    "Weapon": {
+        "prefix": "Weapon",
+        "body": [
+            "// Uses a specific weapon.",
+            "Weapon ${1:weaponname}"
+        ],
+        "description": "Uses a specific weapon."
+    },
+    "Reload": {
+        "prefix": "Reload",
+        "body": [
+            "// Reloads a specific weapon.",
+            "Reload ${1:weaponname}"
+        ],
+        "description": "Reloads a specific weapon."
+    },
+    "ThrowGrenade": {
+        "prefix": "ThrowGrenade",
+        "body": [
+            "// Throws a grenade at a target.",
+            "ThrowGrenade ${1:target}"
+        ],
+        "description": "Throws a grenade at a target."
+    },
+    "AttributeProgressBar": {
+        "prefix": "AttributeProgressBar",
+        "body": [
+            "// Updates the attribute progress bar.",
+            "AttributeProgressBar ${1:attribute},${2:value}"
+        ],
+        "description": "Updates the attribute progress bar."
+    },
+    "MissionLog": {
+        "prefix": "MissionLog",
+        "body": [
+            "// Adds an entry to the mission log.",
+            "MissionLog ${1:logentry}"
+        ],
+        "description": "Adds an entry to the mission log."
+    },
+    "MissionSave": {
+        "prefix": "MissionSave",
+        "body": [
+            "// Saves the mission state.",
+            "MissionSave"
+        ],
+        "description": "Saves the mission state."
+    },
+    "MissionBriefing": {
+        "prefix": "MissionBriefing",
+        "body": [
+            "// Displays the mission briefing.",
+            "MissionBriefing ${1:briefingtext}"
+        ],
+        "description": "Displays the mission briefing."
+    },
+    "ShowMessage": {
+        "prefix": "ShowMessage",
+        "body": [
+            "// Shows a message to the player.",
+            "ShowMessage ${1:message}"
+        ],
+        "description": "Shows a message to the player."
+    },
+    "ShowHint": {
+        "prefix": "ShowHint",
+        "body": [
+            "// Shows a hint to the player.",
+            "ShowHint ${1:hint}"
+        ],
+        "description": "Shows a hint to the player."
+    },
+    "EndMission": {
+        "prefix": "EndMission",
+        "body": [
+            "// Ends the mission with a result.",
+            "EndMission ${1:result}"
+        ],
+        "description": "Ends the mission with a result."
+    },
+    "PlayerKarma": {
+        "prefix": "PlayerKarma",
+        "body": [
+            "// Sets the player's karma.",
+            "PlayerKarma ${1:karma}"
+        ],
+        "description": "Sets the player's karma."
+    },
+    "PlayVideo": {
+        "prefix": "PlayVideo",
+        "body": [
+            "// Plays a video.",
+            "PlayVideo ${1:videoname}"
+        ],
+        "description": "Plays a video."
+    },
+    "OpenDialog": {
+        "prefix": "OpenDialog",
+        "body": [
+            "// Opens a dialog.",
+            "OpenDialog ${1:dialogname}"
+        ],
+        "description": "Opens a dialog."
+    }
+}
