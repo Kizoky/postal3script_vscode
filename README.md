@@ -7,9 +7,9 @@
 
 ## Images:
 
-![syntaxhighlight](https://whackjobint.github.io/postal3script/images/vscode_new.png)
+![syntaxhighlight](https://pseudonym-tim.dev/img/projects/p3s-vscode/p3s-vscode.png)
 
-![syntaxhighlight2](https://whackjobint.github.io/postal3script/images/vscode2_new.png)
+![syntaxhighlight](https://pseudonym-tim.dev/img/projects/p3s-vscode/project_thumbnail.png)
 
 ---
 
